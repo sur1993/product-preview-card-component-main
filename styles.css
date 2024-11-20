@@ -1,0 +1,169 @@
+/* font-family: "Montserrat", sans-serif; */
+/* font-family: "Fraunces", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,WONK@0,9..144,700,1;1,9..144,700,1&display=swap');
+:root{
+    /* color vars */
+    --clr-Dark_cyan: hsl(158, 36%, 37%);
+    --clr-extra-Dark_cyan: hsl(158, 36%, 30%);
+    --clr-Cream: hsl(30, 38%, 92%);
+    --clr-Very_dark_blue: hsl(212, 21%, 14%);
+    --clr-Dark_grayish_blue: hsl(228, 12%, 48%);
+    --clr-White: hsl(0, 0%, 100%);
+
+    /* font vars */
+
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --ff-sanserif: "Montserrat", sans-serif;
+    --ff-serif: "Fraunces", serif;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    /* -webkit-font-smoothing: antialiased; */
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+
+  body{
+    font-family: var(--ff-sanserif);
+    font-size: 0.875rem;
+    font-weight: var(--fw-500);
+    color: var(--clr-Dark_grayish_blue);
+    background-color: var(--clr-Cream);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin:1rem
+  }
+
+  .flex-group{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  img{
+    display:block;
+  }
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
+
+ .product{
+    --content-padding: 1.5rem;
+    --content-spacing:.8rem;
+    --br: .5rem;
+    background-color: var(--clr-White);
+    display: grid;
+    border-radius: var(--br);
+    overflow: hidden;
+    max-width:600px;
+ }
+
+ .product-content{
+    padding: var(--content-padding );
+    display: grid;
+    gap:var(--content-spacing);
+ }
+
+ .p-catagory{
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 0.8rem;
+    
+ }
+
+ .p-name{
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-700);
+    line-height: 2.5rem;
+    color: var(--clr-Very_dark_blue);
+    font-size: 2rem;
+
+ }
+
+ .p-price{
+    font-size: 2rem;
+    font-family: var(--ff-serif);
+    color: var(--clr-Dark_cyan);
+ }
+ 
+ .p-details{
+    line-height: 1.7;
+ }
+ .button{
+    background-color: var(--clr-Dark_cyan);
+    border: none;
+    border-radius: var(--br);
+    padding-block: .7rem;
+    color: var(--clr-White);
+    font-weight: var(--fw-700);
+    justify-content: center;
+    cursor: pointer;
+ }
+
+ .button:is(:hover , :focus){
+    background-color: var(--clr-extra-Dark_cyan);
+ }
+
+ .button[data-icon="shoping-cart"]::before{
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url(/images/icon-cart.svg);
+
+ }
+
+ @media (min-width:650px) {
+    .product{
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+    .p-catagory{
+        align-self: end;
+    }
+ }
